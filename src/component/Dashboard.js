@@ -54,6 +54,8 @@ const Dashboard = () => {
   let [stakwallet, setStakeWallet] = useState()
   const isValidUSDTamount = Number(USDTAmt) >= 20 || USDTAmt == "";
   const sdk = useSDK()
+
+
   var storedData = localStorage.getItem('userData');
   var userDataLocal = JSON.parse(storedData);
 
@@ -106,7 +108,7 @@ const Dashboard = () => {
       const data = await response.json();
       localStorage.setItem("userData", JSON.stringify(data));
       setUserData(data);
-      setUserID(data.data.user_id)
+      setUserID(data.data?.user_id)
     } catch (error) {
       console.error("Error fetching user details:", error);
     }
@@ -162,7 +164,7 @@ const Dashboard = () => {
   //read functions
   const address = useAddress();
   const { contract } = useContract(
-    "0x79F89E653c335572e11538E38ce1158414f4B8A4"
+    "0xc1931Dc38541A982da5470f10Bf5C3Ed51F40490"
   );
   // const { data: cunWalletBal, isLoading: isCunWalletBalLoading } =
   //   useTokenBalance(contract, address);
@@ -616,6 +618,9 @@ const Dashboard = () => {
 
       localStorage.setItem("userID", JSON.stringify(response.data.user_id));
 
+
+ 
+
       if (!response) {
         // setLoading(true)
       } else {
@@ -662,10 +667,11 @@ const Dashboard = () => {
   };
  
 
+     const ID = userData?.data?.user_id
+
   const getstekeTokens = async (userID) => {
-    
     try {
-      let data = await fetch(`https://nodes.mjccoin.io/steck/get-token?user_id=${userID}`)
+      let data = await fetch(`https://nodes.mjccoin.io/steck/get-token?user_id=${ID}`)
       let response = await data.json()
       //console.log (previewID,"ussssddddd")
       setStakeWallet(response.data.total)
@@ -677,7 +683,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getstekeTokens(userID)
-  }, [])
+  }, [ID])
 
 
   // const { data: getThePlanCount, isLoading: isPlanCountLoading } = useContractRead(
@@ -755,23 +761,28 @@ const Dashboard = () => {
 
                   <div className="id_user right_text">
                     <h1>
-                      MJC User{" "}
+                      MJC User
+
                       {userData?.data?.user_id ? <span className="id_bg id_user_top">
-                        ID{loading ? "loading" : userData.data.user_id}
+                        ID{loading ? "loading" : userData.data?.user_id}
                       </span>
                       :  <span className="id_bg id_user_top">
                         ID{loading ? "loading" : userID}
                       </span> }
-                     
-
-                      
+                                         
                     </h1>
-                    <p style={{ width: "200px", fontSize: "13px" }}>
+                    <span className={`${parent !== "0x0000000000000000000000000000000000000000" && parent !== undefined  ? "active" : "inactive"}`} style={{ fontSize: "13px" }}>
+                     {`  
+                      ${!isParentLoading && parent !== "0x0000000000000000000000000000000000000000" && parent !== undefined  ?
+                         "Activated"
+                        : "Inactive"}`}
+                    </span>
+                    <p style={{ width: "200px",  fontSize: "13px" }}>
                       {modifiedAddress}{" "}
                     </p>
 
                     <span onClick={handleParentSearch} className="id_bg id_user_top parent_address" style={{ width: "200px", fontSize: "13px" }}> {`Upline  
-                      ${!isParentLoading && modifiedAddress1 ?
+                      ${!isParentLoading && modifiedAddress1  ?
                         modifiedAddress1
                         : "Connect Wallet"}`}
                     </span>

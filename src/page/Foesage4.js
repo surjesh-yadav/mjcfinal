@@ -86,10 +86,10 @@ useEffect(()=>{
 
 
   const { contract } = useContract(
-    "0x79F89E653c335572e11538E38ce1158414f4B8A4"
+    "0xc1931Dc38541A982da5470f10Bf5C3Ed51F40490"
   );
   const { contract: USDTContract } = useContract(
-    "0xb8105500336560A6E0f3E3EA3A7515AbB341E3e46"
+    "0x9f2C886E49b6851f8488F8818DDBADFd16B13e7a"
   );
 
   const numberOfElements = 10; // Change this to the desired number of elements

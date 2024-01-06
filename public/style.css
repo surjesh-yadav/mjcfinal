@@ -454,6 +454,7 @@ i.fa.fa-user-circle-o {
   font-size: 29px;
   justify-content: space-around;
   align-items: flex-end;
+  margin-bottom: 0;
 }
 
 .id_user p {
@@ -1945,8 +1946,10 @@ th {
   }
 
   input.input_NUmber {
-    width: 140px
+    max-width: 190px;
   }
+  
+   
 
 }
 
@@ -2216,7 +2219,12 @@ input::-webkit-inner-spin-button {
 
   .mobile_search_field{
     margin-bottom: 20px;
+    justify-content: space-between;
   } 
+  .mobile_search_field input.input_NUmber{
+    margin: 0 !important;
+  }
+
 
   .mobile_connect_button {
     display: flex; /* Show mobile button */
@@ -2233,4 +2241,27 @@ input::-webkit-inner-spin-button {
   }
 
  
+}
+
+
+.activated_text{
+    font-size: 13px;
+    top: 92px;
+    right: 54.7%;
+    color: #19cf19;
+}
+
+span.active {
+  color: #6bb100;
+}
+
+span.inactive {
+  color: orange;
+}
+
+
+
+
+.id_user.right_text{
+  position: relative;
 }

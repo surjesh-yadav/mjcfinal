@@ -169,7 +169,7 @@ const Registration = () => {
  
 
   const { contract } = useContract(
-    "0x79F89E653c335572e11538E38ce1158414f4B8A4"
+    "0xc1931Dc38541A982da5470f10Bf5C3Ed51F40490"
   );
   const { data: cunWalletBal, isLoading: isCunWalletBalLoading } =
     useTokenBalance(contract, address);
@@ -214,7 +214,7 @@ const Registration = () => {
   const approveTokens = async () => {
     setApproveTokensLoading(true);
     try {
-      let spender = "0x79F89E653c335572e11538E38ce1158414f4B8A4"; //contract address
+      let spender = "0xc1931Dc38541A982da5470f10Bf5C3Ed51F40490"; //contract address
       let approveAmount = ethers.utils.parseEther(spending);
       const data = await approve({ args: [spender, approveAmount] });
       console.info("contract call successs", data);

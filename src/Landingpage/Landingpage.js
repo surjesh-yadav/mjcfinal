@@ -56,7 +56,7 @@ const Landingpage = () => {
     setPreviewID(event.target.value);
   };
   const { contract } = useContract(
-    "0x79F89E653c335572e11538E38ce1158414f4B8A4"
+    "0xc1931Dc38541A982da5470f10Bf5C3Ed51F40490"
   );
   
 
