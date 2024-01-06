@@ -57,10 +57,12 @@ const navbar = () => {
                             <img src={logo} alt='logosicon' className='logosiconNavs' />
 
                         </div>
+                       <div className='metamask_button_right'>  
                        <div className='mobile_connect_button'>
                        <ConnectWallet/>
                        </div>
-                        <button onClick={toggleDropdown2} className='bars'><i className="fa fa-bars" aria-hidden="true"></i></button>
+                       <button onClick={toggleDropdown2} className='bars'><i className="fa fa-bars" aria-hidden="true"></i></button>
+                       </div>
                     </div>
 
                     <div className='sid_menus_all'>

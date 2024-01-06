@@ -2209,6 +2209,10 @@ input::-webkit-inner-spin-button {
   .desktop_connect_button {
     display: none; /* Hide desktop button on mobile */
   }
+  .metamask_button_right{
+    display: flex;
+    gap: 15px;
+  }
 
   .mobile_search_field{
     margin-bottom: 20px;
