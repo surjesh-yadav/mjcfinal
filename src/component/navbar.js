@@ -14,6 +14,15 @@ import {
 import logo from '../image/Vector.svg';
 
 const navbar = () => {
+
+  const storedData = localStorage.getItem('userData');
+  const userDataLocal = JSON.parse(storedData);
+  const userIDs = localStorage.getItem('userID');
+
+const [userID, setUserID] = useState(userIDs)
+const [previewID, setPreviewID] = useState("");
+const [userData, setUserData] = useState(userDataLocal);
+
     const toggleDropdown = () => {
         const menuDropdown = document.querySelector('.menu_dropdown');
         menuDropdown.classList.toggle('visible');
@@ -43,13 +52,7 @@ const navbar = () => {
 
     };
 
-    var storedData = localStorage.getItem('userData');
-    var userDataLocal = JSON.parse(storedData);
-    var userIDs = localStorage.getItem('userID');
 
-    const [userID, setUserID] = useState(userIDs)
-  const [previewID, setPreviewID] = useState("");
-  const [userData, setUserData] = useState(userDataLocal);
 
   const handleChange = (event) => {
     setPreviewID(event.target.value);
