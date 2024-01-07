@@ -3,7 +3,7 @@ import img6 from "../image/svg-image-6.svg";
 import img8 from "../image/svg-image-8.svg";
 import img4 from "../image/svg-image-4.svg";
 import tiffanysedo from "../image/blue-blur.png";
-import Navbar from "../component/navbar";
+import Navbar from "../component/Navbar";
 import img1 from "../image/Vector.svg";
 import PriviewId from "../component/PriviewId";
 import "./style.css";

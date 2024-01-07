@@ -19,7 +19,7 @@ import tiffanysedo from "../image/tiffany-blur.png";
 import greensedo from "../image/green-blur.png";
 import svg31viewicon from "../image/svg-image-31.svg";
 import { Link } from "react-router-dom";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import PriviewId from "./PriviewId";
 
 import React, { useState, useEffect, useRef } from "react";

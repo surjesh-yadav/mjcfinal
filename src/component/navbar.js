@@ -13,11 +13,11 @@ import {
   } from "@thirdweb-dev/react";
 import logo from '../image/Vector.svg';
 
-const navbar = () => {
+const Navbar = () => {
 
-  const storedData = localStorage.getItem('userData');
-  const userDataLocal = JSON.parse(storedData);
-  const userIDs = localStorage.getItem('userID');
+const storedData = localStorage.getItem('userData');
+const userDataLocal = JSON.parse(storedData);
+const userIDs = localStorage.getItem('userID');
 
 const [userID, setUserID] = useState(userIDs)
 const [previewID, setPreviewID] = useState("");
@@ -157,4 +157,4 @@ const [userData, setUserData] = useState(userDataLocal);
     )
 }
 
-export default navbar
+export default Navbar
