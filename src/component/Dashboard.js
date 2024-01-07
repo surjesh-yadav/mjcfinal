@@ -21,6 +21,7 @@ import svg31viewicon from "../image/svg-image-31.svg";
 import { Link } from "react-router-dom";
 import Navbar from "./navbar";
 import PriviewId from "./PriviewId";
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   ConnectWallet,
@@ -725,9 +726,9 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="connect_btn desktop_connect_button">
+          {/* <div className="connect_btn desktop_connect_button">
             <ConnectWallet />
-          </div>
+          </div> */}
           </div>
         </div>
       </div>
@@ -737,18 +738,7 @@ const Dashboard = () => {
         <div className="container">
        
           <div className="personal_user">
-          <div className="input_btn mobile_search_field">
-              <input
-                value={previewID}
-                type="number"
-                onChange={handleChange}
-                className="input_NUmber"
-                placeholder="Preview ID"
-              />
-             <button type="button" onClick={() => { handleSearch() }}>
-                Search
-              </button>
-            </div>
+ 
             <div className="row">
 
               <div className="col-lg-6 profile-section">

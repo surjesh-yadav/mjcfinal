@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import { useState, useEffect } from "react";
 import icon3 from '../image/svg-image-3.svg';
 import icon4 from '../image/svg-image-4.svg';
 import icon5 from '../image/svg-image-6.svg';
@@ -43,10 +43,40 @@ const navbar = () => {
 
     };
 
+    var storedData = localStorage.getItem('userData');
+    var userDataLocal = JSON.parse(storedData);
+    var userIDs = localStorage.getItem('userID');
 
-    
+    const [userID, setUserID] = useState(userIDs)
+  const [previewID, setPreviewID] = useState("");
+  const [userData, setUserData] = useState(userDataLocal);
 
- 
+  const handleChange = (event) => {
+    setPreviewID(event.target.value);
+
+  };
+
+
+  const fetchData = async () => {
+    console.log("Clicked")
+    try {
+      const response = await fetch("https://nodes.mjccoin.io/v1/alldetails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id: previewID }),
+      });
+      const data = await response.json();
+      localStorage.setItem("userData", JSON.stringify(data));
+      setUserData(data);
+      setUserID(data.data?.user_id)
+      window.location.reload();
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+    }
+  };
+
 
     return (
         <div>
@@ -89,7 +119,21 @@ const navbar = () => {
                         </div>
 
                         <Link to="/Registration"> <span className='iconnav'><img className="iconnav" src={icon8} alt='icon' /></span>Buy Tokens</Link>
-
+            <Link>
+         <div className="input_btn mobile_search_field">
+              <input
+                value={previewID}
+                type="number"
+                onChange={handleChange}
+                className="input_NUmber"
+                placeholder="Preview ID"
+              />
+             <button type="button" onClick={fetchData}>
+                Search
+              </button>
+            </div>
+                         </Link>
+           
                         {/* <Link to="/Landing"> <span className='iconnav'><img className="iconnav" src={icon8} alt='icon' /></span>Landing</Link> */}
 
                         {/* <Link to="/"> <span className='iconnav'><img className="iconnav" src={icon9} alt='icon' /></span>Social</Link>

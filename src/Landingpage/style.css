@@ -3,7 +3,7 @@
 .landingpage_main {
     width: 100%;
     display: inline-block;
-    background: #18191A;
+    /* background: #18191A; */
 }
 
 .rodmap_main {
@@ -82,7 +82,8 @@
 .maxqore h5{
     color: white;
     font-size: 37px;
-      font-family: 'Plus Jakarta Sans' !important;
+    font-family: 'Plus Jakarta Sans' !important;
+    font-weight:900;
 }
 
 
@@ -147,7 +148,7 @@ img.poket_img {
 
 
 .account_title p {
-    font-weight: 200;
+    font-weight: 500;
       font-family: 'Plus Jakarta Sans' !important;
     color: gray;
     font-size: 15px;
@@ -432,7 +433,7 @@ img.smart_chain_icon {
 .main_top_logo {
     display: flex;
     justify-content: space-between;
-    background: #18191A;
+    /* background: #18191A; */
     padding: 14px 30px 1px 30px;
     color: white;
     position: fixed;
@@ -856,3 +857,11 @@ img.smart_chain_icon {
 
     
 }
+
+
+
+.register_left p {
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+  }

@@ -1034,6 +1034,7 @@ input.input_NUmber {
   padding: 8px 10px;
   outline: none;
   color: white;
+  width: 70%;
   padding-left: 18px;
 }
 
@@ -2192,26 +2193,25 @@ input::-webkit-inner-spin-button {
 
 /* Media query for desktop devices with a minimum width of 768px */
 @media (min-width: 768px) {
-  .desktop_connect_button {
-    display: block; /* Show desktop button */
-  }
+ 
 
   .mobile_connect_button {
-    display: none; /* Hide mobile button on desktop */
+    
     background-color: #000000;
     color: white;
   }
 
   .mobile_search_field{
-    display: none;
+    display: none !important;
+  }
+
+  .desktop_search_field{
+    display:  flex !important;
   }
 }
 
 /* Media query for mobile devices with a maximum width of 767px */
 @media (max-width: 767px) {
-  .desktop_connect_button {
-    display: none; /* Hide desktop button on mobile */
-  }
   .metamask_button_right{
     display: flex;
     gap: 15px;
@@ -2237,7 +2237,7 @@ input::-webkit-inner-spin-button {
   }
 
   .desktop_search_field{
-    display:  none;
+    display:  none !important;
   }
 
  
