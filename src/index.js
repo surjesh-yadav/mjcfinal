@@ -18,7 +18,7 @@ root.render(
   <Router>
    <ThirdwebProvider
       supportedWallets={[metamaskWallet(), coinbaseWallet(), walletConnect()]}
-      activeChain={56}
+      activeChain="mumbai"
       clientId="c253ee2f378ff7eade282c568778ff7c"
     >
      <App />
