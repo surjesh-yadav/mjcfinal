@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../component/Navbar";
+import Navbar from "./Navbar";
 import img1 from "../image/Vector.svg";
 import { Link } from "react-router-dom";
 import {
@@ -96,21 +96,22 @@ const Partnerstable = () => {
           <div className="pri_id_img">
             <img src={img1} alt="logo" className="logoimg_priview" />
             <p>Preview ID</p>
-            <div className="input_btn">
+            <div className="input_btn desktop_search_field">
               <input
                 value={previewID}
                 type="number"
                 onChange={handleChange}
                 className="input_NUmber"
+                placeholder="Preview ID"
               />
               <button type="button" onClick={handleSearch}>
                 Search
               </button>
             </div>
           </div>
-          <div className="connect_btn">
+          {/* <div className="connect_btn">
             <ConnectWallet />
-          </div>
+          </div> */}
           </div>
         </div>
       </div>

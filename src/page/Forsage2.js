@@ -133,9 +133,9 @@ useEffect(()=>{
               </button>
             </div>
           </div>
-          <div className="connect_btn">
+          {/* <div className="connect_btn">
             <ConnectWallet />
-          </div>
+          </div> */}
         </div>
       </div>
       <Navbar />

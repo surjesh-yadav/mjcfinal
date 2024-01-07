@@ -62,9 +62,9 @@ const PriviewId = () => {
               <button type='button' onClick={handleSearch}>Search</button>
             </div>
           </div>
-          <div className='connect_btn'>
+          {/* <div className='connect_btn'>
             <ConnectWallet onConnect={handleConnectWallet} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
